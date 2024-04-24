@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Ejercicio1
 {
@@ -11,10 +12,6 @@ namespace Ejercicio1
         public Paciente Inicio;
 
 
-        public void AgregarAlFinal()
-        {
-
-        }
 
         public void AgregarAlPrincipio(Paciente Nodo)
         {
@@ -31,6 +28,62 @@ namespace Ejercicio1
                 
             }
         }
+
+        public bool EliminarPrimero()
+        {
+            if(Inicio == null)
+            {
+                return false;
+            }    
+            else
+            {
+                Paciente aux = Inicio.Siguiente;
+                Inicio = aux;
+                return true;
+            }
+        }
+
+        public void EliminarSeleccionado(Paciente paciente)
+        {
+            if (Inicio == null)
+            {
+                return;
+            }
+            if (Inicio == paciente)
+            {
+                Inicio = Inicio.Siguiente;
+                return;
+            }
+
+            Paciente actual = Inicio;
+
+            while(actual.Siguiente != null)
+            {
+                if(actual.Siguiente == paciente)
+                {
+                    actual.Siguiente = actual.Siguiente.Siguiente;
+                    return;
+                }
+
+                actual = actual.Siguiente;
+            }
+            
+        }
+
+        public List<Paciente> getPacientes()
+        {
+            List <Paciente> pacientes = new List<Paciente>();
+
+            Paciente actual = Inicio;
+
+            while (actual != null)
+            {
+                pacientes.Add(actual);
+                actual = actual.Siguiente;
+            }
+            return pacientes;
+        }
+
 
     }
 }

@@ -8,11 +8,11 @@ namespace Ejercicio1
 {
     public class Paciente
     {
-        public int Codigo;
-        public string Nombre;
-        public string Apellido;
-        public string Direccion;
-        public decimal Telefono;
+        public int Codigo { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public string Direccion { get; set; }
+        public decimal Telefono { get; set; }
 
         public Paciente Siguiente;
     }

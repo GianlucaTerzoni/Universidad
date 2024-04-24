@@ -32,6 +32,8 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.lsbListaCompleta = new System.Windows.Forms.ListBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnEliminarSeleccionado = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtNombre
@@ -52,27 +54,50 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(181, 133);
+            this.btnAgregar.Location = new System.Drawing.Point(254, 133);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(173, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(100, 23);
             this.btnAgregar.TabIndex = 2;
-            this.btnAgregar.Text = "Agregar Al Principio";
+            this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // lsbListaCompleta
             // 
             this.lsbListaCompleta.FormattingEnabled = true;
-            this.lsbListaCompleta.Location = new System.Drawing.Point(131, 184);
+            this.lsbListaCompleta.Location = new System.Drawing.Point(181, 175);
             this.lsbListaCompleta.Name = "lsbListaCompleta";
-            this.lsbListaCompleta.Size = new System.Drawing.Size(150, 147);
+            this.lsbListaCompleta.Size = new System.Drawing.Size(173, 147);
             this.lsbListaCompleta.TabIndex = 3;
+            
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(228, 328);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(126, 23);
+            this.btnEliminar.TabIndex = 4;
+            this.btnEliminar.Text = "Eliminar Primero";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnEliminarSeleccionado
+            // 
+            this.btnEliminarSeleccionado.Location = new System.Drawing.Point(228, 357);
+            this.btnEliminarSeleccionado.Name = "btnEliminarSeleccionado";
+            this.btnEliminarSeleccionado.Size = new System.Drawing.Size(126, 23);
+            this.btnEliminarSeleccionado.TabIndex = 5;
+            this.btnEliminarSeleccionado.Text = "Eliminar Seleccionado";
+            this.btnEliminarSeleccionado.UseVisualStyleBackColor = true;
+            this.btnEliminarSeleccionado.Click += new System.EventHandler(this.btnEliminarSeleccionado_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnEliminarSeleccionado);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.lsbListaCompleta);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.lblNombre);
@@ -90,6 +115,8 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.ListBox lsbListaCompleta;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnEliminarSeleccionado;
     }
 }
 
