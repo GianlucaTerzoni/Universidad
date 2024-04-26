@@ -29,6 +29,39 @@ namespace Ejercicio1
             }
         }
 
+        public void AgregarDespuesDelSeleccionado(Paciente Nodo, Paciente paciente)
+        {
+            if (Inicio == null)
+            {
+                Inicio = Nodo;
+            }
+            else if(Inicio == paciente)
+            {
+                Paciente aux = Inicio.Siguiente;
+                Inicio.Siguiente = Nodo;
+                Nodo.Siguiente = aux;
+            }
+            else
+            {
+                Paciente actual = Inicio;
+
+                while (actual != null)
+                {
+                    if (actual == paciente)
+                    {
+                        Paciente aux = paciente.Siguiente;
+                        paciente.Siguiente = Nodo;
+                        Nodo.Siguiente = aux;
+                        return;
+                    }
+                    actual = actual.Siguiente;
+                }
+            }
+            
+
+
+        }
+
         public bool EliminarPrimero()
         {
             if(Inicio == null)

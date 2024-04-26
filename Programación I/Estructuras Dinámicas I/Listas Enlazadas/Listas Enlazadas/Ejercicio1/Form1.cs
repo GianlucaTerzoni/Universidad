@@ -65,7 +65,7 @@ namespace Ejercicio1
             {
                 MessageBox.Show("Debe ingresar un nombre.");
             }
-
+            txtNombre.Text = "";
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -145,6 +145,38 @@ namespace Ejercicio1
             {
                 MessageBox.Show("No se ha seleccionado ningún paciente.");
             }
+
+        }
+
+        private void btnAgregarDespues_Click(object sender, EventArgs e)
+        {
+            if(txtNombre.Text.Length > 0)
+            {
+                if (lsbListaCompleta.SelectedItem != null)
+                {
+                    if (lsbListaCompleta.SelectedItem is Paciente pacienteSeleccionado)
+                    {
+                        Paciente nuevoPaciente = new Paciente();
+                        nuevoPaciente.Nombre = txtNombre.Text;
+
+                        Lista.AgregarDespuesDelSeleccionado(nuevoPaciente, pacienteSeleccionado);
+                        MostrarLista();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El elemento seleccionado no es un paciente");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar un paciente.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe ingresar un nombre");
+            }
+            txtNombre.Text = "";
 
         }
     }

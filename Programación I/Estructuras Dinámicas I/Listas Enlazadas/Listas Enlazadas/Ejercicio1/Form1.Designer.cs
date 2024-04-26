@@ -35,11 +35,12 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEliminarSeleccionado = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnAgregarDespues = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(181, 107);
+            this.txtNombre.Location = new System.Drawing.Point(181, 77);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(173, 20);
             this.txtNombre.TabIndex = 0;
@@ -47,7 +48,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(128, 110);
+            this.lblNombre.Location = new System.Drawing.Point(132, 77);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(47, 13);
             this.lblNombre.TabIndex = 1;
@@ -55,7 +56,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(254, 133);
+            this.btnAgregar.Location = new System.Drawing.Point(254, 103);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(100, 23);
             this.btnAgregar.TabIndex = 2;
@@ -68,7 +69,7 @@
             this.lsbListaCompleta.FormattingEnabled = true;
             this.lsbListaCompleta.Location = new System.Drawing.Point(181, 175);
             this.lsbListaCompleta.Name = "lsbListaCompleta";
-            this.lsbListaCompleta.Size = new System.Drawing.Size(173, 147);
+            this.lsbListaCompleta.Size = new System.Drawing.Size(323, 147);
             this.lsbListaCompleta.TabIndex = 3;
             // 
             // btnEliminar
@@ -101,11 +102,22 @@
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
+            // btnAgregarDespues
+            // 
+            this.btnAgregarDespues.Location = new System.Drawing.Point(181, 132);
+            this.btnAgregarDespues.Name = "btnAgregarDespues";
+            this.btnAgregarDespues.Size = new System.Drawing.Size(201, 23);
+            this.btnAgregarDespues.TabIndex = 7;
+            this.btnAgregarDespues.Text = "Agregar después del seleccionado";
+            this.btnAgregarDespues.UseVisualStyleBackColor = true;
+            this.btnAgregarDespues.Click += new System.EventHandler(this.btnAgregarDespues_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnAgregarDespues);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnEliminarSeleccionado);
             this.Controls.Add(this.btnEliminar);
@@ -129,6 +141,7 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnEliminarSeleccionado;
         private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Button btnAgregarDespues;
     }
 }
 
