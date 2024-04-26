@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 namespace Ejercicio1
 {
@@ -26,6 +27,7 @@ namespace Ejercicio1
         {
             if (Nodo != null)
             {
+                
                 lsbListaCompleta.Items.Add(Nodo.Nombre);
                 AgregarItemALista(Nodo.Siguiente);
             }
@@ -110,6 +112,40 @@ namespace Ejercicio1
             {
                 MessageBox.Show("No se ha seleccionado ningún elemento.");
             }
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+
+
+            if (lsbListaCompleta.SelectedItem != null)
+            {
+                if (lsbListaCompleta.SelectedItem is Paciente pacienteSeleccionado)
+                {
+
+                    int indiceSeleccionado = lsbListaCompleta.SelectedIndex;
+
+                    FormActualizarPaciente actualizar = new FormActualizarPaciente();
+                    actualizar.ShowDialog();
+
+
+
+                    if (!string.IsNullOrEmpty(actualizar.NuevoNombre))
+                    {
+                        pacienteSeleccionado.Nombre = actualizar.NuevoNombre;
+                        MostrarLista();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("El elemento seleccionado no es un paciente.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se ha seleccionado ningún paciente.");
+            }
+
         }
     }
 }

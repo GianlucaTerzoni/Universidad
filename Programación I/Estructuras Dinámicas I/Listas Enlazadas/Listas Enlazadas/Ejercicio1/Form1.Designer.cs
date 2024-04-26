@@ -34,6 +34,7 @@
             this.lsbListaCompleta = new System.Windows.Forms.ListBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEliminarSeleccionado = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtNombre
@@ -69,7 +70,6 @@
             this.lsbListaCompleta.Name = "lsbListaCompleta";
             this.lsbListaCompleta.Size = new System.Drawing.Size(173, 147);
             this.lsbListaCompleta.TabIndex = 3;
-            
             // 
             // btnEliminar
             // 
@@ -91,11 +91,22 @@
             this.btnEliminarSeleccionado.UseVisualStyleBackColor = true;
             this.btnEliminarSeleccionado.Click += new System.EventHandler(this.btnEliminarSeleccionado_Click);
             // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Location = new System.Drawing.Point(228, 386);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(130, 23);
+            this.btnActualizar.TabIndex = 6;
+            this.btnActualizar.Text = "Actualizar Paciente";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnEliminarSeleccionado);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.lsbListaCompleta);
@@ -117,6 +128,7 @@
         private System.Windows.Forms.ListBox lsbListaCompleta;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnEliminarSeleccionado;
+        private System.Windows.Forms.Button btnActualizar;
     }
 }
 

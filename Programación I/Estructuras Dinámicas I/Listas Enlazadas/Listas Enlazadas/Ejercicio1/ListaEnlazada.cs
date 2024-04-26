@@ -70,6 +70,35 @@ namespace Ejercicio1
             
         }
 
+ 
+        public void ActualizarSeleccionado (Paciente pacienteActualizado)
+        {
+            if (Inicio == null)
+            {
+                return;
+            }
+
+            if(Inicio.Equals(pacienteActualizado))
+            {
+                Inicio = pacienteActualizado;
+                return;
+            }
+
+
+            Paciente actual = Inicio;
+
+            while (actual.Siguiente != null)
+            {
+                if(actual.Siguiente.Equals(pacienteActualizado))
+                {
+                    actual.Siguiente = pacienteActualizado;
+                    return;
+                }
+                actual = actual.Siguiente;
+            }
+
+        }
+
         public List<Paciente> getPacientes()
         {
             List <Paciente> pacientes = new List<Paciente>();
