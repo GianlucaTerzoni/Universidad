@@ -34,6 +34,7 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnAgregarDespues = new System.Windows.Forms.Button();
             this.btnAgregarAntes = new System.Windows.Forms.Button();
+            this.lsbListaCompleta = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,6 +43,7 @@
             this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv1.Location = new System.Drawing.Point(126, 223);
             this.dgv1.Name = "dgv1";
+            this.dgv1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv1.Size = new System.Drawing.Size(761, 380);
             this.dgv1.TabIndex = 0;
             // 
@@ -72,6 +74,7 @@
             this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "Eliminar Alumno";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnAgregarDespues
             // 
@@ -91,11 +94,20 @@
             this.btnAgregarAntes.Text = "Agregar antes del seleccionado";
             this.btnAgregarAntes.UseVisualStyleBackColor = true;
             // 
+            // lsbListaCompleta
+            // 
+            this.lsbListaCompleta.FormattingEnabled = true;
+            this.lsbListaCompleta.Location = new System.Drawing.Point(24, 12);
+            this.lsbListaCompleta.Name = "lsbListaCompleta";
+            this.lsbListaCompleta.Size = new System.Drawing.Size(863, 134);
+            this.lsbListaCompleta.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1012, 713);
+            this.Controls.Add(this.lsbListaCompleta);
             this.Controls.Add(this.btnAgregarAntes);
             this.Controls.Add(this.btnAgregarDespues);
             this.Controls.Add(this.btnEliminar);
@@ -117,6 +129,7 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnAgregarDespues;
         private System.Windows.Forms.Button btnAgregarAntes;
+        private System.Windows.Forms.ListBox lsbListaCompleta;
     }
 }
 

@@ -14,16 +14,17 @@ namespace Ejercicio2
 
         public void RegistrarAlumno(Alumno nuevoAlumno)
         {
-            if(Inicio == null)
+            if (Inicio == null)
             {
                 Inicio = nuevoAlumno;
-                
+
             }
             else
             {
                 Alumno aux = Inicio;
                 Inicio = nuevoAlumno;
                 nuevoAlumno.Siguiente = aux;
+
             }
         }
 
@@ -33,13 +34,41 @@ namespace Ejercicio2
 
             Alumno actual = Inicio;
 
-            if(actual != null)
+            while (actual != null)
             {
                 alumnos.Add(actual);
                 actual = actual.Siguiente;
-
             }
+
             return alumnos;
         }
+
+
+        public void EliminarAlumno(Alumno alumno)
+        {
+            if(Inicio == null)
+            {
+                return;
+            }
+            if(Inicio != null)
+            {
+                Inicio = Inicio.Siguiente;
+            }
+
+            Alumno actual = Inicio;
+
+            while(actual.Siguiente != null)
+            {
+                if(actual.Siguiente == alumno)
+                {
+                    actual.Siguiente = actual.Siguiente.Siguiente;
+                    return;
+                }
+
+                actual = actual.Siguiente;
+            }
+
+        }
+
     }
 }
