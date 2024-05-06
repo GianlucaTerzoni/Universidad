@@ -66,5 +66,31 @@ namespace Ejercicio2
                 actual = actual.Siguiente;
             }
         }
+
+        public void ActualizarInfoAlumno(Alumno alumnoActualizado)
+        {
+            if(Inicio == null)
+            {
+                return;
+            }
+
+            if (Inicio.Equals(alumnoActualizado))
+            {
+                Inicio =  alumnoActualizado;
+                return;
+            }
+
+            Alumno actual = Inicio;
+
+            while(actual.Siguiente != null)
+            {
+                if (actual.Siguiente.Equals(alumnoActualizado))
+                {
+                    actual.Siguiente = alumnoActualizado;
+                }
+                actual = actual.Siguiente;
+            }
+
+        }
     }
 }

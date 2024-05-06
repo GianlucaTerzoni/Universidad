@@ -19,7 +19,7 @@ namespace Ejercicio2
         public Form1()
         {
             InitializeComponent();
-            
+
         }
 
         public void AgregarItemALaLista(Alumno nuevoAlumno)
@@ -37,19 +37,13 @@ namespace Ejercicio2
             lsbListaCompleta.Items.Clear();
             var alumnos = Lista.GetAlumnos();
 
-            //foreach (var alumno in alumnos)
-            //{
-            //    string infoAlumno = $"NOMBRE: {alumno.Nombre}, APELLIDO: {alumno.Apellido}, DNI: {alumno.Dni}, FECHA DE NACIMIENTO {alumno.FechaDeNacimiento}, DIRECCIÓN: {alumno.Direccion}, TELÉFONO: {alumno.Telefono}";
-            //    lsbListaCompleta.Items.Add(infoAlumno);
-            //}
-            lsbListaCompleta.Items.AddRange(alumnos.ToArray());
 
-    
+            lsbListaCompleta.Items.AddRange(alumnos.ToArray());
 
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
-        {        
+        {
             FormRegistrarAlumno registrar = new FormRegistrarAlumno(Lista);
             registrar.ShowDialog(this);
             MostrarLista();
@@ -81,6 +75,32 @@ namespace Ejercicio2
                 MessageBox.Show("No se ha seleccionado ningún elemento.");
             }
 
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            if (lsbListaCompleta.SelectedItem != null)
+            {
+                if (lsbListaCompleta.SelectedItem is Alumno alumnoSeleccionado)
+                {
+
+                    int indiceSeleccionado = lsbListaCompleta.SelectedIndex;
+
+                    ActualizarInfoAlumno actualizar = new ActualizarInfoAlumno(alumnoSeleccionado);
+                    actualizar.ShowDialog();
+
+                    decimal telNuevo = Convert.ToDecimal(actualizar.NuevoTel);
+                    alumnoSeleccionado.Telefono = telNuevo;
+
+                    alumnoSeleccionado.Direccion = actualizar.NuevaDir;
+                    MostrarLista();
+
+                }
+                else
+                {
+                    MessageBox.Show("No se ha seleccionado ningún paciente.");
+                }
+            }
         }
     }
 }
