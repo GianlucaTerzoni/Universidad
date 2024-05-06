@@ -1,4 +1,4 @@
-﻿    using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,7 +32,6 @@ namespace Ejercicio1
                 AgregarItemALista(Nodo.Siguiente);
             }
 
-
         }
 
         public void MostrarLista()
@@ -53,13 +52,11 @@ namespace Ejercicio1
 
             if (txtNombre.Text.Length > 1)
             {
-
                 Paciente NuevoPaciente = new Paciente();
 
                 NuevoPaciente.Nombre = txtNombre.Text;
                 Lista.AgregarAlPrincipio(NuevoPaciente);
                 MostrarLista();
-
             }
             else
             {
@@ -82,8 +79,6 @@ namespace Ejercicio1
             MostrarLista();
 
         }
-
-
 
         private void btnEliminarSeleccionado_Click(object sender, EventArgs e)
         {

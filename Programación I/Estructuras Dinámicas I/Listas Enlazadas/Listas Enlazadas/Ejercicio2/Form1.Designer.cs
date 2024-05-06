@@ -28,28 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgv1 = new System.Windows.Forms.DataGridView();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnAgregarDespues = new System.Windows.Forms.Button();
             this.btnAgregarAntes = new System.Windows.Forms.Button();
             this.lsbListaCompleta = new System.Windows.Forms.ListBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgv1
-            // 
-            this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv1.Location = new System.Drawing.Point(126, 223);
-            this.dgv1.Name = "dgv1";
-            this.dgv1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv1.Size = new System.Drawing.Size(761, 380);
-            this.dgv1.TabIndex = 0;
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(126, 165);
+            this.btnRegistrar.Location = new System.Drawing.Point(105, 101);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(188, 41);
             this.btnRegistrar.TabIndex = 1;
@@ -59,7 +48,7 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(414, 165);
+            this.btnActualizar.Location = new System.Drawing.Point(402, 101);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(188, 41);
             this.btnActualizar.TabIndex = 2;
@@ -68,7 +57,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(699, 165);
+            this.btnEliminar.Location = new System.Drawing.Point(699, 101);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(188, 41);
             this.btnEliminar.TabIndex = 3;
@@ -97,9 +86,9 @@
             // lsbListaCompleta
             // 
             this.lsbListaCompleta.FormattingEnabled = true;
-            this.lsbListaCompleta.Location = new System.Drawing.Point(24, 12);
+            this.lsbListaCompleta.Location = new System.Drawing.Point(77, 157);
             this.lsbListaCompleta.Name = "lsbListaCompleta";
-            this.lsbListaCompleta.Size = new System.Drawing.Size(863, 134);
+            this.lsbListaCompleta.Size = new System.Drawing.Size(863, 459);
             this.lsbListaCompleta.TabIndex = 6;
             // 
             // Form1
@@ -113,17 +102,13 @@
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnRegistrar);
-            this.Controls.Add(this.dgv1);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgv1;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnEliminar;

@@ -19,17 +19,17 @@ namespace Ejercicio2
         public Form1()
         {
             InitializeComponent();
-
-            MostrarLista();
+            
         }
 
-        public void AgregarItemALaLista(Alumno Nodo)
+        public void AgregarItemALaLista(Alumno nuevoAlumno)
         {
-            if (Nodo != null)
+            if (nuevoAlumno != null)
             {
-                lsbListaCompleta.Items.Add(Nodo);
-                AgregarItemALaLista(Nodo.Siguiente);
+                lsbListaCompleta.Items.Add(nuevoAlumno);
+                AgregarItemALaLista(nuevoAlumno.Siguiente);
             }
+
         }
 
         public void MostrarLista()
@@ -37,16 +37,19 @@ namespace Ejercicio2
             lsbListaCompleta.Items.Clear();
             var alumnos = Lista.GetAlumnos();
 
-            foreach (var alumno in alumnos)
-            {
-                string infoAlumno = $"Nombre: {alumno.Nombre}, Apellido: {alumno.Apellido}, DNI: {alumno.Dni}, Fecha de Nacimiento: {alumno.FechaDeNacimiento}, Dirección: {alumno.Direccion}, Teléfono: {alumno.Telefono}";
-                lsbListaCompleta.Items.Add(infoAlumno);
-            }
+            //foreach (var alumno in alumnos)
+            //{
+            //    string infoAlumno = $"NOMBRE: {alumno.Nombre}, APELLIDO: {alumno.Apellido}, DNI: {alumno.Dni}, FECHA DE NACIMIENTO {alumno.FechaDeNacimiento}, DIRECCIÓN: {alumno.Direccion}, TELÉFONO: {alumno.Telefono}";
+            //    lsbListaCompleta.Items.Add(infoAlumno);
+            //}
+            lsbListaCompleta.Items.AddRange(alumnos.ToArray());
+
+    
+
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
-        {
-            
+        {        
             FormRegistrarAlumno registrar = new FormRegistrarAlumno(Lista);
             registrar.ShowDialog(this);
             MostrarLista();
@@ -54,17 +57,30 @@ namespace Ejercicio2
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            
-            if (dgv1.CurrentRow != null)
+            if (lsbListaCompleta.SelectedItem != null)
             {
-                Alumno seleccionado = (Alumno)dgv1.CurrentRow.DataBoundItem;
-                Lista.EliminarAlumno(seleccionado);
+                if (lsbListaCompleta.SelectedItem is Alumno alumnoSeleccionado)
+                {
+                    int indiceSeleccionado = lsbListaCompleta.SelectedIndex;
+
+                    Lista.EliminarAlumno(alumnoSeleccionado);
+                    MostrarLista();
+
+                    if (indiceSeleccionado >= 0 && indiceSeleccionado < lsbListaCompleta.Items.Count)
+                    {
+                        lsbListaCompleta.SetSelected(indiceSeleccionado, true);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("El elemento seleccionado no es un alumno.");
+                }
             }
             else
             {
-                MessageBox.Show("Debe seleccionar el Alumno que desea eliminar.");
+                MessageBox.Show("No se ha seleccionado ningún elemento.");
             }
-         
+
         }
     }
 }

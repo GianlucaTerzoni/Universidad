@@ -56,10 +56,7 @@ namespace Ejercicio1
                     }
                     actual = actual.Siguiente;
                 }
-            }
-            
-
-
+            }          
         }
 
         public bool EliminarPrimero()
@@ -99,8 +96,7 @@ namespace Ejercicio1
                 }
 
                 actual = actual.Siguiente;
-            }
-            
+            }         
         }
 
  
@@ -145,7 +141,5 @@ namespace Ejercicio1
             }
             return pacientes;
         }
-
-
     }
 }

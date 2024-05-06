@@ -13,7 +13,7 @@ namespace Ejercicio2
 {
     internal partial class FormRegistrarAlumno : Form
     {
-        //ListaEnlazada Lista = new ListaEnlazada();
+
         private ListaEnlazada Lista;
         public FormRegistrarAlumno(ListaEnlazada lista)
         {
@@ -26,7 +26,7 @@ namespace Ejercicio2
             if(txtNombre.Text.Length > 1 && txtApellido.Text.Length > 1 && txtDNI.Text.Length > 1
                 && txtFechaDeNacimiento.Text.Length > 1 && txtDireccion.Text.Length > 1 && txtTelefono.Text.Length > 1)
             {
-                Alumno nuevoAlumno = new Alumno();
+                Alumno nuevoAlumno = new Alumno(txtNombre.Text, txtApellido.Text, Convert.ToDecimal(txtDNI.Text), Convert.ToDateTime(txtFechaDeNacimiento.Text), txtDireccion.Text, Convert.ToDecimal(txtTelefono.Text));
 
                 nuevoAlumno.Nombre = txtNombre.Text;
                 nuevoAlumno.Apellido = txtApellido.Text;

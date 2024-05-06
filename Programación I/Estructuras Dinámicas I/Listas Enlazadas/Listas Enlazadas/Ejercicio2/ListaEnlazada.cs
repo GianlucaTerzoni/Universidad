@@ -17,14 +17,12 @@ namespace Ejercicio2
             if (Inicio == null)
             {
                 Inicio = nuevoAlumno;
-
             }
             else
             {
                 Alumno aux = Inicio;
                 Inicio = nuevoAlumno;
                 nuevoAlumno.Siguiente = aux;
-
             }
         }
 
@@ -39,36 +37,34 @@ namespace Ejercicio2
                 alumnos.Add(actual);
                 actual = actual.Siguiente;
             }
-
             return alumnos;
         }
 
-
         public void EliminarAlumno(Alumno alumno)
         {
-            if(Inicio == null)
+            if (Inicio == null)
             {
-                return;
+                return; 
             }
-            if(Inicio != null)
+
+            if (Inicio == alumno)
             {
-                Inicio = Inicio.Siguiente;
+                Inicio = Inicio.Siguiente; 
+                return;
             }
 
             Alumno actual = Inicio;
 
-            while(actual.Siguiente != null)
+            while (actual.Siguiente != null)
             {
-                if(actual.Siguiente == alumno)
+                if (actual.Siguiente == alumno)
                 {
-                    actual.Siguiente = actual.Siguiente.Siguiente;
+                    actual.Siguiente = actual.Siguiente.Siguiente; 
                     return;
                 }
 
                 actual = actual.Siguiente;
             }
-
         }
-
     }
 }
