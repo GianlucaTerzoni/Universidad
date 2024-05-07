@@ -29,14 +29,12 @@ namespace Ejercicio2
                 lsbListaCompleta.Items.Add(nuevoAlumno);
                 AgregarItemALaLista(nuevoAlumno.Siguiente);
             }
-
         }
 
         public void MostrarLista()
         {
             lsbListaCompleta.Items.Clear();
             var alumnos = Lista.GetAlumnos();
-
 
             lsbListaCompleta.Items.AddRange(alumnos.ToArray());
 
@@ -99,6 +97,24 @@ namespace Ejercicio2
                 else
                 {
                     MessageBox.Show("No se ha seleccionado ningún paciente.");
+                }
+            }
+        }
+
+        private void btnAgregarDespues_Click(object sender, EventArgs e)
+        {
+            if(lsbListaCompleta.SelectedItem != null)
+            {
+                if (lsbListaCompleta.SelectedItem is Alumno alumnoSeleccionado)
+                {
+                    int indiceSeleccionado = lsbListaCompleta.SelectedIndex;
+
+                    FormAgregarDespuesDelSeleccionado registroDespuesSeleccionado = new FormAgregarDespuesDelSeleccionado(Lista,this);
+                    registroDespuesSeleccionado.ShowDialog(this);
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar un alumno.");
                 }
             }
         }

@@ -44,12 +44,12 @@ namespace Ejercicio2
         {
             if (Inicio == null)
             {
-                return; 
+                return;
             }
 
             if (Inicio == alumno)
             {
-                Inicio = Inicio.Siguiente; 
+                Inicio = Inicio.Siguiente;
                 return;
             }
 
@@ -59,7 +59,7 @@ namespace Ejercicio2
             {
                 if (actual.Siguiente == alumno)
                 {
-                    actual.Siguiente = actual.Siguiente.Siguiente; 
+                    actual.Siguiente = actual.Siguiente.Siguiente;
                     return;
                 }
 
@@ -69,20 +69,20 @@ namespace Ejercicio2
 
         public void ActualizarInfoAlumno(Alumno alumnoActualizado)
         {
-            if(Inicio == null)
+            if (Inicio == null)
             {
                 return;
             }
 
             if (Inicio.Equals(alumnoActualizado))
             {
-                Inicio =  alumnoActualizado;
+                Inicio = alumnoActualizado;
                 return;
             }
 
             Alumno actual = Inicio;
 
-            while(actual.Siguiente != null)
+            while (actual.Siguiente != null)
             {
                 if (actual.Siguiente.Equals(alumnoActualizado))
                 {
@@ -91,6 +91,38 @@ namespace Ejercicio2
                 actual = actual.Siguiente;
             }
 
+        }
+
+        public void AgregarDespuesDelSeleccionado(Alumno seleccionado, Alumno nuevoAlumno)
+        {
+            if(Inicio == null)
+            {
+                Inicio = nuevoAlumno;
+                return;
+            }
+            else if (Inicio == seleccionado)
+            {
+                Alumno aux = Inicio.Siguiente;
+                Inicio.Siguiente = nuevoAlumno;
+                nuevoAlumno.Siguiente = aux; 
+            }
+            else
+            {
+                Alumno actual = Inicio;
+
+                while(actual != null)
+                {
+                    if(actual == seleccionado)
+                    {
+                        Alumno aux = seleccionado.Siguiente;
+                        seleccionado.Siguiente = nuevoAlumno;
+                        nuevoAlumno.Siguiente = aux;
+                        return;
+                    }
+
+                    actual = actual.Siguiente;
+                }
+            }
         }
     }
 }

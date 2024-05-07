@@ -74,6 +74,7 @@
             this.btnAgregarDespues.TabIndex = 4;
             this.btnAgregarDespues.Text = "Agregar después del seleccionado";
             this.btnAgregarDespues.UseVisualStyleBackColor = true;
+            this.btnAgregarDespues.Click += new System.EventHandler(this.btnAgregarDespues_Click);
             // 
             // btnAgregarAntes
             // 
@@ -115,7 +116,7 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnAgregarDespues;
         private System.Windows.Forms.Button btnAgregarAntes;
-        private System.Windows.Forms.ListBox lsbListaCompleta;
+        public System.Windows.Forms.ListBox lsbListaCompleta;
     }
 }
 

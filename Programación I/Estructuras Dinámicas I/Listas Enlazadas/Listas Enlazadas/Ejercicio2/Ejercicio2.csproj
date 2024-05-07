@@ -59,6 +59,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAgregarDespuesDelSeleccionado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAgregarDespuesDelSeleccionado.Designer.cs">
+      <DependentUpon>FormAgregarDespuesDelSeleccionado.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormRegistrarAlumno.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAgregarDespuesDelSeleccionado.resx">
+      <DependentUpon>FormAgregarDespuesDelSeleccionado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRegistrarAlumno.resx">
       <DependentUpon>FormRegistrarAlumno.cs</DependentUpon>
