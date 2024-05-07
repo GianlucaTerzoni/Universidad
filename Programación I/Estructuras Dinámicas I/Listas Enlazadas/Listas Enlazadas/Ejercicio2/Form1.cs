@@ -118,5 +118,23 @@ namespace Ejercicio2
                 }
             }
         }
+
+        private void btnAgregarAntes_Click(object sender, EventArgs e)
+        {
+            if (lsbListaCompleta.SelectedItem != null)
+            {
+                if (lsbListaCompleta.SelectedItem is Alumno alumnoSeleccionado)
+                {
+                    int indiceSeleccionado = lsbListaCompleta.SelectedIndex;
+
+                    FormAgregarAntes registroAntesSeleccionado = new FormAgregarAntes(Lista, this);
+                    registroAntesSeleccionado.ShowDialog(this);
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar un alumno.");
+                }
+            }
+        }
     }
 }

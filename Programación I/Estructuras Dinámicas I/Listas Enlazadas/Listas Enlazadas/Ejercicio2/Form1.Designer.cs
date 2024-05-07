@@ -84,6 +84,7 @@
             this.btnAgregarAntes.TabIndex = 5;
             this.btnAgregarAntes.Text = "Agregar antes del seleccionado";
             this.btnAgregarAntes.UseVisualStyleBackColor = true;
+            this.btnAgregarAntes.Click += new System.EventHandler(this.btnAgregarAntes_Click);
             // 
             // lsbListaCompleta
             // 

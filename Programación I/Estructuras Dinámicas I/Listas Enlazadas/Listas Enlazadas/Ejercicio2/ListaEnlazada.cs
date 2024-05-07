@@ -124,5 +124,34 @@ namespace Ejercicio2
                 }
             }
         }
+
+        public void AgregarAntesDelSeleccionado(Alumno seleccionado, Alumno nuevoAlumno)
+        {
+            if(Inicio == null)
+            {
+                Inicio = nuevoAlumno;
+                return;
+            }else if (Inicio == seleccionado)
+            {
+                nuevoAlumno.Siguiente = seleccionado;
+                Inicio = nuevoAlumno;
+                return;
+            }
+            else
+            {
+                Alumno actual = Inicio;
+
+                while(actual.Siguiente != null)
+                {
+                    if(actual.Siguiente == seleccionado)
+                    {
+                        nuevoAlumno.Siguiente = seleccionado;
+                        actual.Siguiente = nuevoAlumno;
+                        return;
+                    }
+                    actual = actual.Siguiente;
+                }
+            }
+        }
     }
 }
