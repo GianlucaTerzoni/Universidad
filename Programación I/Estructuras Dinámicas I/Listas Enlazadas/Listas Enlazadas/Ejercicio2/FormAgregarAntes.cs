@@ -14,7 +14,6 @@ namespace Ejercicio2
 {
     internal partial class FormAgregarAntes : Form
     {
-
         private ListaEnlazada Lista;
 
         private ListBox lsbListaCompleta;
@@ -29,13 +28,10 @@ namespace Ejercicio2
         {
             var selectedItem = (Alumno)lsbListaCompleta.SelectedItem;
 
-
             if (txtNombre.Text.Length > 1 && txtApellido.Text.Length > 1 && txtDNI.Text.Length > 1
                 && txtFechaDeNacimiento.Text.Length > 1 && txtDireccion.Text.Length > 1 && txtTelefono.Text.Length > 1)
             {
                 Alumno nuevoAlumno = new Alumno(txtNombre.Text, txtApellido.Text, Convert.ToDecimal(txtDNI.Text), Convert.ToDateTime(txtFechaDeNacimiento.Text), txtDireccion.Text, Convert.ToDecimal(txtTelefono.Text));
-
-
 
                 nuevoAlumno.Nombre = txtNombre.Text;
                 nuevoAlumno.Apellido = txtApellido.Text;
