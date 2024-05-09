@@ -37,5 +37,13 @@ namespace Ejercicio_1
                 _tope = _tope.Siguiente;
             }
         }
+
+        public void MoverASecundaria(Contenedor contenedor)
+        {
+            if(_tope != null)
+            {
+                
+            }
+        }
     }
 }

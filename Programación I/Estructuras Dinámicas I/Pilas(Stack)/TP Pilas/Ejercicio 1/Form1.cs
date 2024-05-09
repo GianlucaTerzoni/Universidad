@@ -30,6 +30,25 @@ namespace Ejercicio_1
             }
         }
 
+        public void MostrarPilaSecundaria()
+        {
+            lsbSecundario.Items.Clear();
+
+            if(PilaSecundaria.Tope()!= null)
+            {
+                MostrarNodoEnListaSecundaria(PilaSecundaria.Tope());
+            }
+        }
+        public void MostrarNodoEnListaSecundaria(Contenedor contenedor)
+        {
+            lsbSecundario.Items.Add(contenedor.NumeroDeIdentificacion);
+
+            if(contenedor.Siguiente != null)
+            {
+                MostrarNodoEnListaSecundaria(contenedor.Siguiente);
+            }
+        }
+
         public void MostrarNodoEnLista(Contenedor contenedor)
         {
             lsbPrincipal.Items.Add(contenedor.NumeroDeIdentificacion);
@@ -54,12 +73,49 @@ namespace Ejercicio_1
             }
             PilaPrincipal.Push(nuevoContenedor);
             MostrarPilaPrincipal();
+
+            txtIdentificador.Text = "";
         }
 
         private void btnDesapilar_Click(object sender, EventArgs e)
         {
             PilaPrincipal.Pop();
             MostrarPilaPrincipal();
+        }
+
+        private void btnMoverSecundario_Click(object sender, EventArgs e)
+        {
+            if(PilaPrincipal.Tope() != null)
+            {
+                Contenedor aux = new Contenedor();
+                aux.NumeroDeIdentificacion = PilaPrincipal.Tope().NumeroDeIdentificacion;
+
+                PilaSecundaria.Push(aux);
+                PilaPrincipal.Pop();
+                MostrarPilaPrincipal();
+                MostrarPilaSecundaria();
+            }
+            else
+            {
+                MessageBox.Show("La Pila principal está vacía, no se puede mover.");
+            }
+        }
+
+        private void btnMoverPrincipal_Click(object sender, EventArgs e)
+        {
+            if(PilaSecundaria.Tope() != null)
+            {
+                Contenedor aux = new Contenedor();
+                aux.NumeroDeIdentificacion = PilaSecundaria.Tope().NumeroDeIdentificacion;
+                PilaPrincipal.Push(aux);
+                PilaSecundaria.Pop();
+                MostrarPilaPrincipal();
+                MostrarPilaSecundaria();
+            }
+            else
+            {
+                MessageBox.Show("La pila secundaria está vacía, no hay nada que mover.");
+            }
         }
     }
 }

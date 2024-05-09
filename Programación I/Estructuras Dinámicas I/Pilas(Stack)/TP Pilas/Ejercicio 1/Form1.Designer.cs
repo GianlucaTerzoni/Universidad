@@ -90,6 +90,7 @@
             this.btnMoverSecundario.TabIndex = 5;
             this.btnMoverSecundario.Text = "Mover Contenedor hacia la pila secundaria";
             this.btnMoverSecundario.UseVisualStyleBackColor = true;
+            this.btnMoverSecundario.Click += new System.EventHandler(this.btnMoverSecundario_Click);
             // 
             // btnDesapilar
             // 
@@ -109,6 +110,7 @@
             this.btnMoverPrincipal.TabIndex = 7;
             this.btnMoverPrincipal.Text = "Mover Contenedor hacia la pila principal";
             this.btnMoverPrincipal.UseVisualStyleBackColor = true;
+            this.btnMoverPrincipal.Click += new System.EventHandler(this.btnMoverPrincipal_Click);
             // 
             // label2
             // 
