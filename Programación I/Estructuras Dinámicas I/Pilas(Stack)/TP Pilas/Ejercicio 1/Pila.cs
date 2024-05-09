@@ -8,14 +8,12 @@ namespace Ejercicio_1
 {
     public class Pila
     {
-
         Contenedor _tope;
 
         public Contenedor Tope()
         {
             return _tope;
         }
-
 
         public void Push(Contenedor nuevoContenedor)
         {
@@ -35,14 +33,6 @@ namespace Ejercicio_1
             if(_tope != null)
             {
                 _tope = _tope.Siguiente;
-            }
-        }
-
-        public void MoverASecundaria(Contenedor contenedor)
-        {
-            if(_tope != null)
-            {
-                
             }
         }
     }
