@@ -1,0 +1,26 @@
+Nro Comprobante; Descripción; Importe
+1000101;Servicio de Mantenimiento Software;10500
+1000101;Antivirus;5500 
+1000101;BackUp de Datos;2500
+1000110;Instalación de RED;55000
+1000110;Instalación de Software;10500 
+1000115;Servicio de Mantenimiento Software;10500
+1000115;Antivirus;5500
+1000115;Reparación de RED;7500
+1000120;Servicio de Mantenimiento Software;10500 
+1000122;Servicio de Mantenimiento Software;10500
+1000122;Antivirus;5500
+1000125;Servicio de Mantenimiento Software;10500
+1000125;Antivirus;5500
+1000125;Reparación PC;45000
+1000125;BackUp de Datos;2500 
+ 
+
+
+
+
+
+ 
+
+ 
+

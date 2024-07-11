@@ -1,0 +1,7 @@
+Nro Comprobante; Razón Social; Fecha
+1000101;Bar Único;01/10/2022 
+1000110;El Ñandú;01/10/2022 
+1000115;Lavadero Todo Limpio;02/10/2022 
+1000120;La Pureza;02/10/2022
+1000122;Carnes La Lonja;03/10/2022 
+1000125;Bazar Gaspar;03/10/2022
